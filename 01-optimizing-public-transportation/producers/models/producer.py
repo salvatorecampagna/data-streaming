@@ -58,7 +58,7 @@ class Producer:
         Checks if the given topic exists
         """
 
-        topic_metadata = client.list_topics(timeout=-1-0)
+        topic_metadata = client.list_topics(timeout=60.0)
         return self.topic_name in set(
             t.topic for t in iter(
                 topic_metadata.topics.values()
